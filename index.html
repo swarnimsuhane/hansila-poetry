@@ -3,105 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hansila – Swipe. Feel. Like. Repeat.</title>
+  <title>Hansila – Poetry by Swarnim</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    .like-heart {
-      font-size: 3rem;
-      animation: pop 0.3s ease;
+    .card {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    .like-icon {
+      animation: pop 0.5s ease;
     }
     @keyframes pop {
-      0% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.3); opacity: 1; }
+      0% { transform: scale(0.5); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
 <body class="bg-[#FAF8F5] text-gray-800 font-sans">
-  <div class="text-center py-8">
-    <h1 class="text-4xl font-bold font-serif">Hansila</h1>
-    <p class="italic">Swipe. Feel. Like. Repeat.</p>
-  </div>
+  <div class="container mx-auto py-10 px-4">
+    <h1 class="text-5xl font-bold text-center font-serif mb-2">Hansila</h1>
+    <p class="text-center text-lg italic mb-10">Swipe. Feel. Like. Repeat.</p>
 
-  <!-- Poem Swipe Gallery -->
-  <div class="max-w-md mx-auto relative">
-    <div id="poemGallery"></div>
-  </div>
+    <!-- Poem Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      <div class="card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" ondblclick="likePoem(this)">
+        <img src="images/ek-paigam.jpeg" alt="Ek Paigam" class="w-full h-80 object-cover">
+        <div class="p-4 text-center text-xl font-semibold">Ek Paigam</div>
+      </div>
+      <div class="card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" ondblclick="likePoem(this)">
+        <img src="images/4-baatein.jpeg" alt="4 Baatein 2 Yaadein" class="w-full h-80 object-cover">
+        <div class="p-4 text-center text-xl font-semibold">4 Baatein 2 Yaadein</div>
+      </div>
+      <div class="card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" ondblclick="likePoem(this)">
+        <img src="images/zindagi-parindaa.jpeg" alt="Zindagi Ek Parindaa" class="w-full h-80 object-cover">
+        <div class="p-4 text-center text-xl font-semibold">Zindagi Ek Parindaa</div>
+      </div>
+      <div class="card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" ondblclick="likePoem(this)">
+        <img src="images/zindagi-safar.jpeg" alt="Zindagi Ek Safar" class="w-full h-80 object-cover">
+        <div class="p-4 text-center text-xl font-semibold">Zindagi Ek Safar</div>
+      </div>
+    </div>
 
-  <!-- Video Section -->
-  <div class="text-center mt-16">
-    <h2 class="text-2xl font-semibold font-serif mb-6">Video Series</h2>
-    <div class="grid grid-cols-1 gap-6 px-4 max-w-xl mx-auto">
-      <div class="rounded-xl overflow-hidden shadow-lg border border-[#E5CFCF]">
+    <!-- Video Series -->
+    <h2 class="text-3xl font-serif text-center mb-6">Video Series</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
         <video controls class="w-full">
           <source src="videos/kaun-hoon-mein.mp4" type="video/mp4">
         </video>
-        <div class="bg-white py-2 font-medium">Kaun Hoon Mein</div>
+        <div class="p-4 text-center font-semibold">Kaun Hoon Mein</div>
       </div>
-      <div class="rounded-xl overflow-hidden shadow-lg border border-[#E5CFCF]">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
         <video controls class="w-full">
           <source src="videos/inferno-tide.mp4" type="video/mp4">
         </video>
-        <div class="bg-white py-2 font-medium">Inferno Tide</div>
+        <div class="p-4 text-center font-semibold">Inferno Tide</div>
       </div>
-      <div class="rounded-xl overflow-hidden shadow-lg border border-[#E5CFCF]">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
         <video controls class="w-full">
           <source src="videos/cycle-of-time.mp4" type="video/mp4">
         </video>
-        <div class="bg-white py-2 font-medium">Cycle of Time</div>
+        <div class="p-4 text-center font-semibold">Cycle of Time</div>
       </div>
-      <div class="rounded-xl overflow-hidden shadow-lg border border-[#E5CFCF]">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
         <video controls class="w-full">
-          <source src="videos/waqt-ke-paar.mp4" type="video/mp4">
+          <source src="videos/dastaan.mp4" type="video/mp4">
         </video>
-        <div class="bg-white py-2 font-medium">Waqt Ke Paar</div>
+        <div class="p-4 text-center font-semibold">Dastaan</div>
       </div>
     </div>
+
+    <!-- Contact Section -->
+    <h2 class="text-3xl font-serif text-center mt-16 mb-6">Get in Touch</h2>
+    <form class="max-w-xl mx-auto space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg" />
+      <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg" />
+      <textarea placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded-lg h-32"></textarea>
+      <button type="submit" class="bg-[#E5CFCF] hover:bg-[#ddbbbb] text-white px-6 py-2 rounded-full font-semibold">Send Message</button>
+    </form>
+
+    <footer class="mt-20 text-center text-sm text-gray-500">© 2025 Hansila. Built with ❤️ by Swarnim Suhane</footer>
   </div>
 
-  <footer class="text-center text-sm text-gray-500 mt-16 mb-8">
-    Built with ❤️ by Swarnim Suhane
-  </footer>
-
   <script>
-    const poems = [
-      "ek-paigam.jpeg",
-      "4-baatein.jpeg",
-      "ghar-ek-yaad.jpeg",
-      "koyal.jpeg",
-      "samandar.jpeg",
-      "zindagi-parindaa.jpeg",
-      "zindagi-safar.jpeg",
-      "ashq.jpeg",
-      "intezaar-ka-ant.jpeg",
-      "naya-saal.jpeg",
-      "noor-e-ishq.jpeg",
-      "phir-ek-maut.jpeg",
-      "shaant-safar.jpeg",
-      "tasavvur-ki-tanhai.jpeg"
-    ];
-
-    const gallery = document.getElementById("poemGallery");
-
-    poems.forEach((img, i) => {
-      const card = document.createElement("div");
-      card.className = "w-full h-[500px] mb-6 rounded-xl shadow-xl overflow-hidden border-4 border-[#E5CFCF] bg-cover bg-center relative";
-      card.style.backgroundImage = `url(images/${img})`;
-
-      let heart = document.createElement("div");
-      heart.innerHTML = "❤️";
-      heart.className = "absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-red-500 opacity-0";
-
-      card.appendChild(heart);
-
-      card.ondblclick = () => {
-        heart.classList.add("like-heart");
-        heart.classList.remove("opacity-0");
-        setTimeout(() => heart.classList.add("opacity-0"), 600);
-      };
-
-      gallery.appendChild(card);
-    });
+    function likePoem(card) {
+      const icon = document.createElement("div");
+      icon.textContent = "❤️";
+      icon.className = "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl text-red-500 like-icon";
+      card.appendChild(icon);
+      setTimeout(() => icon.remove(), 800);
+    }
   </script>
 </body>
 </html>
