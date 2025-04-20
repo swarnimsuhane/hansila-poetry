@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+# Get the HTML content from the latest updated Canvas
+html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -23,30 +26,57 @@
   <section class="max-w-3xl mx-auto px-4 py-10">
     <h2 class="text-3xl font-semibold mb-4">About the Poet</h2>
     <p class="text-lg text-gray-700 leading-relaxed">
-      Swarnim Suhane, a dreamer of verses, captures timeless emotions through words. With each line, Hansila becomes a reflection of stillness and soul.
+      Swarnim Suhane is a dreamer of verses, storyteller of silences, and the soul behind Hansila.
+      Through words, he captures the delicate echoes of love, loss, time, and self-reflection. 
+      Hansila is not just poetry — it’s a journey through emotions etched on a digital scroll.
     </p>
   </section>
 
-  <!-- Poetry Cards -->
+  <!-- Poetry Cards Section -->
   <section class="px-4 py-10">
-    <h2 class="text-3xl text-center font-semibold mb-6">Featured Poems</h2>
+    <h2 class="text-3xl text-center font-semibold mb-6">Ek Lamha Ek Yaad – Featured Poems</h2>
     <div class="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
       <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">Ek Paigam</h3>
-        <p class="mt-2 text-gray-600">A message wrapped in emotions, sent into the void...</p>
+        <h3 class="text-xl font-bold">EK PAIGAM</h3>
+        <p class="mt-2 text-gray-600">Lamha 1: Jazbaat ka Paighaam</p>
       </div>
       <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">Ghar Ek Yaad</h3>
+        <h3 class="text-xl font-bold">CHAAR BAATEIN 2 YAADEIN</h3>
+        <p class="mt-2 text-gray-600">Dil ki woh chaar baatein jo yaadon mein basi thi...</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow">
+        <h3 class="text-xl font-bold">GHAR EK YAAD</h3>
         <p class="mt-2 text-gray-600">A home built not with walls, but memories...</p>
       </div>
       <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">Tassavur Ki Tanahai</h3>
+        <h3 class="text-xl font-bold">KOYAL</h3>
+        <p class="mt-2 text-gray-600">A songbird echoing lost love...</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow">
+        <h3 class="text-xl font-bold">SAMANDAR</h3>
+        <p class="mt-2 text-gray-600">Vast and deep, like unspoken emotions.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow">
+        <h3 class="text-xl font-bold">ASHQ</h3>
+        <p class="mt-2 text-gray-600">Tears as tales of survival...</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow">
+        <h3 class="text-xl font-bold">TASSAVUR KI TANAHAI</h3>
         <p class="mt-2 text-gray-600">In the silence of thought, echoes remain...</p>
       </div>
       <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">Zindagi Ek Parinda</h3>
+        <h3 class="text-xl font-bold">ZINDAGI EK PARINDA</h3>
         <p class="mt-2 text-gray-600">Life, like a bird, seeks the sky beyond the known...</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Portfolio & Contact -->
+  <section class="px-4 py-16 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-6">Explore More</h2>
+      <p class="mb-4 text-gray-700">Want to connect, collaborate, or read more?</p>
+      <a href="https://bluecheesee.my.canva.site/weaver-of-enigmatic-suspense" target="_blank" class="inline-block bg-[#E5CFCF] text-white px-6 py-3 rounded-full hover:bg-[#d4b6b6] transition">View My Portfolio</a>
     </div>
   </section>
 
@@ -63,3 +93,10 @@
 
 </body>
 </html>
+"""
+
+# Save it to a downloadable HTML file
+file_path = Path("/mnt/data/hansila-poetry-site.html")
+file_path.write_text(html_content)
+
+file_path.name
