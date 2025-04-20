@@ -1,7 +1,4 @@
-from pathlib import Path
-
-# Get the HTML content from the latest updated Canvas
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -12,6 +9,8 @@ html_content = """<!DOCTYPE html>
   <style>
     body { font-family: 'Inter', sans-serif; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    details summary::-webkit-details-marker { display: none; }
+    summary { cursor: pointer; font-weight: bold; }
   </style>
 </head>
 <body class="bg-[#FAF8F5] text-[#333]">
@@ -32,42 +31,87 @@ html_content = """<!DOCTYPE html>
     </p>
   </section>
 
-  <!-- Poetry Cards Section -->
+  <!-- Full Poetry Display -->
   <section class="px-4 py-10">
-    <h2 class="text-3xl text-center font-semibold mb-6">Ek Lamha Ek Yaad – Featured Poems</h2>
-    <div class="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">EK PAIGAM</h3>
-        <p class="mt-2 text-gray-600">Lamha 1: Jazbaat ka Paighaam</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">CHAAR BAATEIN 2 YAADEIN</h3>
-        <p class="mt-2 text-gray-600">Dil ki woh chaar baatein jo yaadon mein basi thi...</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">GHAR EK YAAD</h3>
-        <p class="mt-2 text-gray-600">A home built not with walls, but memories...</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">KOYAL</h3>
-        <p class="mt-2 text-gray-600">A songbird echoing lost love...</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">SAMANDAR</h3>
-        <p class="mt-2 text-gray-600">Vast and deep, like unspoken emotions.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">ASHQ</h3>
-        <p class="mt-2 text-gray-600">Tears as tales of survival...</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">TASSAVUR KI TANAHAI</h3>
-        <p class="mt-2 text-gray-600">In the silence of thought, echoes remain...</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="text-xl font-bold">ZINDAGI EK PARINDA</h3>
-        <p class="mt-2 text-gray-600">Life, like a bird, seeks the sky beyond the known...</p>
-      </div>
+    <h2 class="text-3xl text-center font-semibold mb-6">Ek Lamha Ek Yaad – The Full Collection</h2>
+    <div class="max-w-5xl mx-auto space-y-6">
+      <details class="bg-white p-6 rounded-xl shadow">
+        <summary class="text-xl">EK PAIGAM – Lamha 1: Jazbaat ka Paighaam</summary>
+        <p class="mt-4 text-gray-600 whitespace-pre-wrap">
+Jazbaat ka paighaam tha, lafzon se bhej diya,
+Ek ehsaas tha dil ka, kagaz pe likh diya.
+
+Har harf mein tha dard, har she’r mein tha pyaar,
+Kya tum samajh paaye, mere jazbaat ka izhaar?
+        </p>
+      </details>
+
+      <details class="bg-white p-6 rounded-xl shadow">
+        <summary class="text-xl">CHAAR BAATEIN 2 YAADEIN</summary>
+        <p class="mt-4 text-gray-600 whitespace-pre-wrap">
+Char baatein thi tumse kehni, do yaadein thi tumhari,
+Ek lamha tha jo tha khaas, aur ek tasveer purani.
+
+Waqt se guzar gaye hum, yaadon ke saaye mein,
+Par dil ab bhi ruk jaata hai, uss choti si mulaqat mein.
+        </p>
+      </details>
+
+      <details class="bg-white p-6 rounded-xl shadow">
+        <summary class="text-xl">GHAR EK YAAD</summary>
+        <p class="mt-4 text-gray-600 whitespace-pre-wrap">
+Ghar tha woh, jisme deewar nahi, bas teri khushboo thi,
+Ek aangan tha, jahan har subah teri muskurahat gungunati thi.
+
+Ab toh bas ek yaad hai woh ghar,
+Jo pal mein jeeta tha aur hamesha ke liye chhup gaya andar.
+        </p>
+      </details>
+
+      <details class="bg-white p-6 rounded-xl shadow">
+        <summary class="text-xl">KOYAL</summary>
+        <p class="mt-4 text-gray-600 whitespace-pre-wrap">
+Koyal jaise bolti thi, tu har mod pe zindagi,
+Teri awaaz mein bas gaya tha mere geet ka sur.
+
+Ab woh bolti nahi, par har subah,
+Main uski yaadon ka geet phir se likhta hoon.
+        </p>
+      </details>
+
+      <details class="bg-white p-6 rounded-xl shadow">
+        <summary class="text-xl">ASHQ</summary>
+        <p class="mt-4 text-gray-600 whitespace-pre-wrap">
+Ek ashq tha, jo baahon mein tham gaya,
+Ek dard tha, jo muskurahat ban gaya.
+
+Zindagi ne kya-kya nahi diya,
+Par sabse gehri thi woh aansuon ki khamoshi.
+        </p>
+      </details>
+
+      <details class="bg-white p-6 rounded-xl shadow">
+        <summary class="text-xl">TASSAVUR KI TANAHAI</summary>
+        <p class="mt-4 text-gray-600 whitespace-pre-wrap">
+Tassavur mein aayi thi tu, ek khwab si lagti thi,
+Tanhaai mein bhi ek saathi thi tu, yaadon mein basti thi.
+
+Ab bhi jab akela hota hoon,
+Toh teri muskurahat ki tasveer saamne aati hai.
+        </p>
+      </details>
+
+      <details class="bg-white p-6 rounded-xl shadow">
+        <summary class="text-xl">ZINDAGI EK PARINDA</summary>
+        <p class="mt-4 text-gray-600 whitespace-pre-wrap">
+Zindagi ek parinda hai, jo udta hai aasman se umeed ke,
+Kabhi girta hai, kabhi sambhalta hai, par rukta nahi.
+
+Aur main?
+Main bas us parinde ka safar hoon,
+Jo har baar naye aasman ki talaash mein nikalta hai.
+        </p>
+      </details>
     </div>
   </section>
 
@@ -80,23 +124,16 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Contact Form -->
+  <!-- Contact Form (Aesthetic Only) -->
   <section class="px-4 py-10 max-w-xl mx-auto">
     <h2 class="text-3xl font-semibold text-center mb-6">Get in Touch</h2>
     <form class="space-y-4">
-      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-lg" />
-      <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded-lg" />
-      <textarea placeholder="Your Message" class="w-full px-4 py-2 border rounded-lg"></textarea>
-      <button type="submit" class="bg-[#E5CFCF] px-6 py-2 rounded-full text-white hover:bg-[#d4b6b6] transition">Send</button>
+      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-lg" disabled />
+      <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded-lg" disabled />
+      <textarea placeholder="Your Message" class="w-full px-4 py-2 border rounded-lg" disabled></textarea>
+      <button type="button" class="bg-[#E5CFCF] px-6 py-2 rounded-full text-white hover:bg-[#d4b6b6] transition cursor-not-allowed">Send (Coming Soon)</button>
     </form>
   </section>
 
 </body>
 </html>
-"""
-
-# Save it to a downloadable HTML file
-file_path = Path("/mnt/data/hansila-poetry-site.html")
-file_path.write_text(html_content)
-
-file_path.name
