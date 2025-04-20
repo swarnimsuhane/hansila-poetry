@@ -2,40 +2,133 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hansila Poetry</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hansila – Poetry by Swarnim</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FAF8F5;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 50px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+    .brand {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #5b5b5b;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #c0392b;
+    }
+    .hero {
+      text-align: center;
+      padding: 40px 20px 10px;
+    }
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 16px;
+      color: #555;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px 60px;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-900">
-  <header class="text-center py-6 bg-gray-100 shadow">
-    <h1 class="text-4xl font-bold">Hansila</h1>
-    <p class="text-lg text-gray-600">Where Words Dance Between Silence and Expression</p>
+<body>
+  <header>
+    <div class="brand">Hansila</div>
+    <nav>
+      <a href="mailto:swarnim.suhane06@gmail.com" target="_blank">Mail</a>
+      <a href="https://instagram.com/Sajal_s06" target="_blank">Instagram</a>
+      <a href="https://linkedin.com/in/swarnim-suhane-a15b23229/" target="_blank">LinkedIn</a>
+      <a href="https://swarnimsuhane.github.io" target="_blank">Portfolio</a>
+    </nav>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 py-10">
-    <h2 class="text-3xl text-center font-semibold mb-6">Poetry Poster Gallery</h2>
-    <p class="text-center text-gray-600 mb-8">
-      Each poster is a visual reflection of the poem it holds. Click to view fullscreen.
-    </p>
+  <section class="hero">
+    <h1>Poetry Poster Gallery</h1>
+    <p>Each poster is a visual reflection of the poem it holds. Click to view fullscreen.</p>
+  </section>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <a href="images/ek-paigam.jpeg" target="_blank"><img src="images/ek-paigam.jpeg" alt="Ek Paigam Poster" class="rounded-xl shadow" /></a>
-      <a href="images/4-baatein.jpeg" target="_blank"><img src="images/4-baatein.jpeg" alt="4 Baatein 2 Yaadein Poster" class="rounded-xl shadow" /></a>
-      <a href="images/ghar-ek-yaad.jpeg" target="_blank"><img src="images/ghar-ek-yaad.jpeg" alt="Ghar Ek Yaad Poster" class="rounded-xl shadow" /></a>
-      <a href="images/koyal.jpeg" target="_blank"><img src="images/koyal.jpeg" alt="Koyal Poster" class="rounded-xl shadow" /></a>
-      <a href="images/samandar.jpeg" target="_blank"><img src="images/samandar.jpeg" alt="Samandar Poster" class="rounded-xl shadow" /></a>
-      <a href="images/zindagi-ek-parinda.jpeg" target="_blank"><img src="images/zindagi-ek-parinda.jpeg" alt="Zindagi Ek Parinda Poster" class="rounded-xl shadow" /></a>
-      <a href="images/zindagi-ek-safar.jpeg" target="_blank"><img src="images/zindagi-ek-safar.jpeg" alt="Zindagi Ek Safar Poster" class="rounded-xl shadow" /></a>
-      <a href="images/naya-saal.jpeg" target="_blank"><img src="images/naya-saal.jpeg" alt="Naya Saal Poster" class="rounded-xl shadow" /></a>
-      <a href="images/phir-ek-maut.jpeg" target="_blank"><img src="images/phir-ek-maut.jpeg" alt="Phir Ek Maut Poster" class="rounded-xl shadow" /></a>
+  <section class="gallery">
+    <div class="card">
+      <a href="images/Ek Paigaam.jpeg" target="_blank">
+        <img src="images/Ek Paigaam.jpeg" alt="Ek Paigaam Poster">
+      </a>
     </div>
-  </main>
-
-  <footer class="text-center text-sm text-gray-500 mt-20 mb-6">
-    Made with ❤️ by Swarnim Suhane – 
-    <a href="https://instagram.com/sajal_s06" class="text-blue-500" target="_blank">@sajal_s06</a> | 
-    <a href="mailto:swarnim.suhane06@gmail.com" class="text-blue-500">swarnim.suhane06@gmail.com</a> | 
-    <a href="https://swarnimsuhane.github.io" class="text-blue-500" target="_blank">Portfolio</a>
-  </footer>
+    <div class="card">
+      <a href="images/Chaar Baatein 2 Yaadein.jpeg" target="_blank">
+        <img src="images/Chaar Baatein 2 Yaadein.jpeg" alt="4 Baatein Poster">
+      </a>
+    </div>
+    <div class="card">
+      <a href="images/Ghar Ek Yaad.jpeg" target="_blank">
+        <img src="images/Ghar Ek Yaad.jpeg" alt="Ghar Ek Yaad Poster">
+      </a>
+    </div>
+    <div class="card">
+      <a href="images/Koyal.jpeg" target="_blank">
+        <img src="images/Koyal.jpeg" alt="Koyal Poster">
+      </a>
+    </div>
+    <div class="card">
+      <a href="images/Samandar.jpeg" target="_blank">
+        <img src="images/Samandar.jpeg" alt="Samandar Poster">
+      </a>
+    </div>
+    <div class="card">
+      <a href="images/Zindagi Ek Parinda.jpeg" target="_blank">
+        <img src="images/Zindagi Ek Parinda.jpeg" alt="Zindagi Ek Parinda Poster">
+      </a>
+    </div>
+    <div class="card">
+      <a href="images/Zindagi Ek Safar.jpeg" target="_blank">
+        <img src="images/Zindagi Ek Safar.jpeg" alt="Zindagi Ek Safar Poster">
+      </a>
+    </div>
+  </section>
 </body>
 </html>
