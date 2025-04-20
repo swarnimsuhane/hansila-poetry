@@ -1,80 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hansila – Poetry by Swarnim</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    details summary::-webkit-details-marker { display: none; }
-    summary { cursor: pointer; font-weight: bold; }
-  </style>
-</head>
-<body class="bg-[#FAF8F5] text-[#333]">
+// Hansila Swipe Poetry App – Final Enhanced Version with Video & Tinder+Instagram Features
+import React, { useState } from "react";
+import TinderCard from "react-tinder-card";
+import "./App.css";
 
-  <!-- Hero Section -->
-  <section class="text-center py-20 px-4">
-    <h1 class="text-5xl font-bold">Hansila</h1>
-    <p class="text-xl mt-4 italic">"Where words dance between silence and expression"</p>
-  </section>
+const poems = [
+  {
+    title: "Ek Paigam",
+    image: "images/ek-paigam.jpeg",
+  },
+  {
+    title: "4 Baatein 2 Yaadein",
+    image: "images/4-baatein.jpeg",
+  },
+  {
+    title: "Ghar Ek Yaad",
+    image: "images/ghar-ek-yaad.jpeg",
+  },
+  {
+    title: "Koyal",
+    image: "images/koyal.jpeg",
+  },
+  {
+    title: "Samandar",
+    image: "images/samandar.jpeg",
+  },
+  {
+    title: "Zindagi Ek Parindaa",
+    image: "images/zindagi-parindaa.jpeg",
+  },
+  {
+    title: "Zindagi Ek Safar",
+    image: "images/zindagi-safar.jpeg",
+  },
+];
 
-  <!-- About Section -->
-  <section class="max-w-3xl mx-auto px-4 py-10">
-    <h2 class="text-3xl font-semibold mb-4">About the Poet</h2>
-    <p class="text-lg text-gray-700 leading-relaxed">
-      Swarnim Suhane is a dreamer of verses, storyteller of silences, and the soul behind Hansila.
-      Through words, he captures the delicate echoes of love, loss, time, and self-reflection. 
-      Hansila is not just poetry — it’s a journey through emotions etched on a digital scroll.
-    </p>
-  </section>
+const videos = [
+  {
+    title: "Kaun Hoon Mein",
+    video: "videos/kaun-hoon-mein.mp4",
+  },
+  {
+    title: "Inferno Tide",
+    video: "videos/inferno-tide.mp4",
+  },
+  {
+    title: "Cycle of Time",
+    video: "videos/cycle-of-time.mp4",
+  },
+  {
+    title: "Dastaan",
+    video: "videos/dastaan.mp4",
+  },
+  {
+    title: "Waqt Ke Paar",
+    video: "videos/waqt-ke-paar.mp4",
+  },
+];
 
-  <!-- Social Links Section -->
-  <section class="text-center py-10">
-    <h2 class="text-2xl font-semibold mb-4">Connect with Me</h2>
-    <div class="space-x-4">
-      <a href="https://www.linkedin.com/in/swarnim-suhane-a15b23229/" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">LinkedIn</a>
-      <a href="https://www.instagram.com/Sajal_s06" target="_blank" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700">Instagram</a>
-      <a href="mailto:Swarnim.suhane02@gmail.com" class="inline-block bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700">Email</a>
-      <a href="https://bluecheesee.my.canva.site/weaver-of-enigmatic-suspense" target="_blank" class="inline-block bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-900">Portfolio</a>
-    </div>
-  </section>
+export default function App() {
+  const [liked, setLiked] = useState([]);
 
-  <!-- Poster Gallery Section -->
-  <section class="px-4 py-16 bg-white">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl text-center font-semibold mb-6">Poetry Poster Gallery</h2>
-      <p class="text-center text-gray-600 mb-8">Each poster is a visual reflection of the poem it holds. Click to view fullscreen.</p>
-      <div class="grid md:grid-cols-3 gap-6">
-        <a href="images/ek-paigam.jpeg" target="_blank"><img src="images/ek-paigam.jpeg" alt="Ek Paigam Poster" class="rounded-xl shadow" /></a>
-        <a href="images/4-baatein.jpeg" target="_blank"><img src="images/4-baatein.jpeg" alt="4 Baatein 2 Yaadein Poster" class="rounded-xl shadow" /></a>
-        <a href="images/ghar-ek-yaad.jpeg" target="_blank"><img src="images/ghar-ek-yaad.jpeg" alt="Ghar Ek Yaad Poster" class="rounded-xl shadow" /></a>
-        <a href="images/koyal.jpeg" target="_blank"><img src="images/koyal.jpeg" alt="Koyal Poster" class="rounded-xl shadow" /></a>
-        <a href="images/samandar.jpeg" target="_blank"><img src="images/samandar.jpeg" alt="Samandar Poster" class="rounded-xl shadow" /></a>
-        <a href="images/naya-saal.jpeg" target="_blank"><img src="images/naya-saal.jpeg" alt="Naya Saal Poster" class="rounded-xl shadow" /></a>
-        <a href="images/shaant-safar.jpeg" target="_blank"><img src="images/shaant-safar.jpeg" alt="Shaant Safar Poster" class="rounded-xl shadow" /></a>
-        <a href="images/ashq.jpeg" target="_blank"><img src="images/ashq.jpeg" alt="Ashq Poster" class="rounded-xl shadow" /></a>
-        <a href="images/phir-ek-maut.jpeg" target="_blank"><img src="images/phir-ek-maut.jpeg" alt="Phir Ek Maut Poster" class="rounded-xl shadow" /></a>
-        <a href="images/intezaar.jpeg" target="_blank"><img src="images/intezaar.jpeg" alt="Intezaar Ek Ant Poster" class="rounded-xl shadow" /></a>
-        <a href="images/tasavvur.jpeg" target="_blank"><img src="images/tasavvur.jpeg" alt="Tasavvur Ki Tanhai Poster" class="rounded-xl shadow" /></a>
-        <a href="images/zindagi-safar.jpeg" target="_blank"><img src="images/zindagi-safar.jpeg" alt="Zindagi Ek Safar Poster" class="rounded-xl shadow" /></a>
-        <a href="images/zindagi-parindaa.jpeg" target="_blank"><img src="images/zindagi-parindaa.jpeg" alt="Zindagi Ek Parindaa Poster" class="rounded-xl shadow" /></a>
+  const handleLike = (title) => {
+    if (!liked.includes(title)) {
+      setLiked([...liked, title]);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#FAF8F5] flex flex-col items-center justify-center">
+      <h1 className="text-4xl font-bold mt-8 font-serif">Hansila</h1>
+      <p className="text-lg italic mb-6">Swipe. Feel. Like. Repeat.</p>
+
+      {/* Poem Swipe Gallery */}
+      <div className="w-full max-w-md h-[550px] relative mb-12">
+        {poems.map((poem) => (
+          <TinderCard
+            key={poem.title}
+            preventSwipe={["up", "down"]}
+            onCardLeftScreen={() => console.log(`${poem.title} left the screen`)}
+          >
+            <div
+              className="absolute bg-white shadow-xl rounded-xl w-full h-[500px] p-4 flex flex-col items-center justify-center transition-transform duration-300 border-4 border-[#E5CFCF]"
+              onDoubleClick={() => handleLike(poem.title)}
+              style={{
+                backgroundImage: `url(${poem.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              {liked.includes(poem.title) && (
+                <div className="text-red-600 text-5xl animate-ping">❤️</div>
+              )}
+            </div>
+          </TinderCard>
+        ))}
       </div>
+
+      {/* Video Carousel */}
+      <h2 className="text-2xl font-semibold mb-4 font-serif">Video Series</h2>
+      <div className="grid grid-cols-1 gap-6 w-full max-w-xl px-4">
+        {videos.map((vid) => (
+          <div key={vid.title} className="rounded-xl overflow-hidden shadow-lg border border-[#E5CFCF]">
+            <video controls className="w-full">
+              <source src={vid.video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="p-4 bg-white">
+              <h3 className="text-lg font-semibold text-center">{vid.title}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <footer className="mt-16 mb-8 text-center text-sm text-gray-500">
+        Built with ❤️ by Swarnim Suhane
+      </footer>
     </div>
-  </section>
-
-  <!-- Contact Form (Disabled/Aesthetic) -->
-  <section class="px-4 py-10 max-w-xl mx-auto">
-    <h2 class="text-3xl font-semibold text-center mb-6">Get in Touch</h2>
-    <form class="space-y-4">
-      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-lg" disabled />
-      <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded-lg" disabled />
-      <textarea placeholder="Your Message" class="w-full px-4 py-2 border rounded-lg" disabled></textarea>
-      <button type="button" class="bg-[#E5CFCF] px-6 py-2 rounded-full text-white hover:bg-[#d4b6b6] transition cursor-not-allowed">Send (Coming Soon)</button>
-    </form>
-  </section>
-
-</body>
-</html>
+  );
+}
