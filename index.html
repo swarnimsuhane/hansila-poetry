@@ -1,84 +1,41 @@
-// Hansila Swipe Poetry App – Final Enhanced Version with Video & Tinder+Instagram Features
-import React, { useState } from "react";
-import TinderCard from "react-tinder-card";
-import "./App.css";
-import logo from "./images/hansila-logo.png";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hansila Poetry</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900">
+  <header class="text-center py-6 bg-gray-100 shadow">
+    <h1 class="text-4xl font-bold">Hansila</h1>
+    <p class="text-lg text-gray-600">Where Words Dance Between Silence and Expression</p>
+  </header>
 
-const poems = [
-  { title: "Ek Paigam", image: "images/ek-paigam.jpeg" },
-  { title: "4 Baatein 2 Yaadein", image: "images/4-baatein.jpeg" },
-  { title: "Ghar Ek Yaad", image: "images/ghar-ek-yaad.jpeg" },
-  { title: "Koyal", image: "images/koyal.jpeg" },
-  { title: "Samandar", image: "images/samandar.jpeg" },
-  { title: "Zindagi Ek Parindaa", image: "images/zindagi-parindaa.jpeg" },
-  { title: "Zindagi Ek Safar", image: "images/zindagi-safar.jpeg" },
-];
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <h2 class="text-3xl text-center font-semibold mb-6">Poetry Poster Gallery</h2>
+    <p class="text-center text-gray-600 mb-8">
+      Each poster is a visual reflection of the poem it holds. Click to view fullscreen.
+    </p>
 
-const videos = [
-  { title: "Kaun Hoon Mein", video: "videos/kaun-hoon-mein.mp4" },
-  { title: "Inferno Tide", video: "videos/inferno-tide.mp4" },
-  { title: "Cycle of Time", video: "videos/cycle-of-time.mp4" },
-  { title: "Dastaan", video: "videos/dastaan.mp4" },
-];
-
-export default function App() {
-  const [liked, setLiked] = useState([]);
-  const handleLike = (title) => {
-    if (!liked.includes(title)) {
-      setLiked([...liked, title]);
-    }
-  };
-
-  return (
-    <div className="min-h-screen bg-[#FAF8F5] flex flex-col items-center justify-center">
-      <img src={logo} alt="Hansila Logo" className="w-24 h-24 mt-6 rounded-full shadow-md" />
-      <h1 className="text-4xl font-bold mt-4 font-serif">Hansila</h1>
-      <p className="text-lg italic mb-6">Swipe. Feel. Like. Repeat.</p>
-
-      {/* Poem Swipe Gallery */}
-      <div className="w-full max-w-md h-[550px] relative mb-12">
-        {poems.map((poem) => (
-          <TinderCard
-            key={poem.title}
-            preventSwipe={["up", "down"]}
-            onCardLeftScreen={() => console.log(`${poem.title} left the screen`)}
-          >
-            <div
-              className="absolute bg-white shadow-xl rounded-xl w-full h-[500px] p-4 flex flex-col items-center justify-center transition-transform duration-300 border-4 border-[#E5CFCF]"
-              onDoubleClick={() => handleLike(poem.title)}
-              style={{
-                backgroundImage: `url(${poem.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              {liked.includes(poem.title) && (
-                <div className="text-red-600 text-5xl animate-ping">❤️</div>
-              )}
-            </div>
-          </TinderCard>
-        ))}
-      </div>
-
-      {/* Video Carousel */}
-      <h2 className="text-2xl font-semibold mb-4 font-serif">Video Series</h2>
-      <div className="grid grid-cols-1 gap-6 w-full max-w-xl px-4">
-        {videos.map((vid) => (
-          <div key={vid.title} className="rounded-xl overflow-hidden shadow-lg border border-[#E5CFCF]">
-            <video controls className="w-full">
-              <source src={vid.video} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="p-4 bg-white">
-              <h3 className="text-lg font-semibold text-center">{vid.title}</h3>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <footer className="mt-16 mb-8 text-center text-sm text-gray-500">
-        Built with ❤️ by Swarnim Suhane
-      </footer>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="images/ek-paigam.jpeg" target="_blank"><img src="images/ek-paigam.jpeg" alt="Ek Paigam Poster" class="rounded-xl shadow" /></a>
+      <a href="images/4-baatein.jpeg" target="_blank"><img src="images/4-baatein.jpeg" alt="4 Baatein 2 Yaadein Poster" class="rounded-xl shadow" /></a>
+      <a href="images/ghar-ek-yaad.jpeg" target="_blank"><img src="images/ghar-ek-yaad.jpeg" alt="Ghar Ek Yaad Poster" class="rounded-xl shadow" /></a>
+      <a href="images/koyal.jpeg" target="_blank"><img src="images/koyal.jpeg" alt="Koyal Poster" class="rounded-xl shadow" /></a>
+      <a href="images/samandar.jpeg" target="_blank"><img src="images/samandar.jpeg" alt="Samandar Poster" class="rounded-xl shadow" /></a>
+      <a href="images/zindagi-ek-parinda.jpeg" target="_blank"><img src="images/zindagi-ek-parinda.jpeg" alt="Zindagi Ek Parinda Poster" class="rounded-xl shadow" /></a>
+      <a href="images/zindagi-ek-safar.jpeg" target="_blank"><img src="images/zindagi-ek-safar.jpeg" alt="Zindagi Ek Safar Poster" class="rounded-xl shadow" /></a>
+      <a href="images/naya-saal.jpeg" target="_blank"><img src="images/naya-saal.jpeg" alt="Naya Saal Poster" class="rounded-xl shadow" /></a>
+      <a href="images/phir-ek-maut.jpeg" target="_blank"><img src="images/phir-ek-maut.jpeg" alt="Phir Ek Maut Poster" class="rounded-xl shadow" /></a>
     </div>
-  );
-}
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 mt-20 mb-6">
+    Made with ❤️ by Swarnim Suhane – 
+    <a href="https://instagram.com/sajal_s06" class="text-blue-500" target="_blank">@sajal_s06</a> | 
+    <a href="mailto:swarnim.suhane06@gmail.com" class="text-blue-500">swarnim.suhane06@gmail.com</a> | 
+    <a href="https://swarnimsuhane.github.io" class="text-blue-500" target="_blank">Portfolio</a>
+  </footer>
+</body>
+</html>
