@@ -1,120 +1,107 @@
-// Hansila Swipe Poetry App – Final Enhanced Version with Video & Tinder+Instagram Features
-import React, { useState } from "react";
-import TinderCard from "react-tinder-card";
-import "./App.css";
-
-const poems = [
-  {
-    title: "Ek Paigam",
-    image: "images/ek-paigam.jpeg",
-  },
-  {
-    title: "4 Baatein 2 Yaadein",
-    image: "images/4-baatein.jpeg",
-  },
-  {
-    title: "Ghar Ek Yaad",
-    image: "images/ghar-ek-yaad.jpeg",
-  },
-  {
-    title: "Koyal",
-    image: "images/koyal.jpeg",
-  },
-  {
-    title: "Samandar",
-    image: "images/samandar.jpeg",
-  },
-  {
-    title: "Zindagi Ek Parindaa",
-    image: "images/zindagi-parindaa.jpeg",
-  },
-  {
-    title: "Zindagi Ek Safar",
-    image: "images/zindagi-safar.jpeg",
-  },
-];
-
-const videos = [
-  {
-    title: "Kaun Hoon Mein",
-    video: "videos/kaun-hoon-mein.mp4",
-  },
-  {
-    title: "Inferno Tide",
-    video: "videos/inferno-tide.mp4",
-  },
-  {
-    title: "Cycle of Time",
-    video: "videos/cycle-of-time.mp4",
-  },
-  {
-    title: "Dastaan",
-    video: "videos/dastaan.mp4",
-  },
-  {
-    title: "Waqt Ke Paar",
-    video: "videos/waqt-ke-paar.mp4",
-  },
-];
-
-export default function App() {
-  const [liked, setLiked] = useState([]);
-
-  const handleLike = (title) => {
-    if (!liked.includes(title)) {
-      setLiked([...liked, title]);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hansila – Swipe. Feel. Like. Repeat.</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .like-heart {
+      font-size: 3rem;
+      animation: pop 0.3s ease;
     }
-  };
+    @keyframes pop {
+      0% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-[#FAF8F5] text-gray-800 font-sans">
+  <div class="text-center py-8">
+    <h1 class="text-4xl font-bold font-serif">Hansila</h1>
+    <p class="italic">Swipe. Feel. Like. Repeat.</p>
+  </div>
 
-  return (
-    <div className="min-h-screen bg-[#FAF8F5] flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold mt-8 font-serif">Hansila</h1>
-      <p className="text-lg italic mb-6">Swipe. Feel. Like. Repeat.</p>
+  <!-- Poem Swipe Gallery -->
+  <div class="max-w-md mx-auto relative">
+    <div id="poemGallery"></div>
+  </div>
 
-      {/* Poem Swipe Gallery */}
-      <div className="w-full max-w-md h-[550px] relative mb-12">
-        {poems.map((poem) => (
-          <TinderCard
-            key={poem.title}
-            preventSwipe={["up", "down"]}
-            onCardLeftScreen={() => console.log(`${poem.title} left the screen`)}
-          >
-            <div
-              className="absolute bg-white shadow-xl rounded-xl w-full h-[500px] p-4 flex flex-col items-center justify-center transition-transform duration-300 border-4 border-[#E5CFCF]"
-              onDoubleClick={() => handleLike(poem.title)}
-              style={{
-                backgroundImage: `url(${poem.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              {liked.includes(poem.title) && (
-                <div className="text-red-600 text-5xl animate-ping">❤️</div>
-              )}
-            </div>
-          </TinderCard>
-        ))}
+  <!-- Video Section -->
+  <div class="text-center mt-16">
+    <h2 class="text-2xl font-semibold font-serif mb-6">Video Series</h2>
+    <div class="grid grid-cols-1 gap-6 px-4 max-w-xl mx-auto">
+      <div class="rounded-xl overflow-hidden shadow-lg border border-[#E5CFCF]">
+        <video controls class="w-full">
+          <source src="videos/kaun-hoon-mein.mp4" type="video/mp4">
+        </video>
+        <div class="bg-white py-2 font-medium">Kaun Hoon Mein</div>
       </div>
-
-      {/* Video Carousel */}
-      <h2 className="text-2xl font-semibold mb-4 font-serif">Video Series</h2>
-      <div className="grid grid-cols-1 gap-6 w-full max-w-xl px-4">
-        {videos.map((vid) => (
-          <div key={vid.title} className="rounded-xl overflow-hidden shadow-lg border border-[#E5CFCF]">
-            <video controls className="w-full">
-              <source src={vid.video} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="p-4 bg-white">
-              <h3 className="text-lg font-semibold text-center">{vid.title}</h3>
-            </div>
-          </div>
-        ))}
+      <div class="rounded-xl overflow-hidden shadow-lg border border-[#E5CFCF]">
+        <video controls class="w-full">
+          <source src="videos/inferno-tide.mp4" type="video/mp4">
+        </video>
+        <div class="bg-white py-2 font-medium">Inferno Tide</div>
       </div>
-
-      <footer className="mt-16 mb-8 text-center text-sm text-gray-500">
-        Built with ❤️ by Swarnim Suhane
-      </footer>
+      <div class="rounded-xl overflow-hidden shadow-lg border border-[#E5CFCF]">
+        <video controls class="w-full">
+          <source src="videos/cycle-of-time.mp4" type="video/mp4">
+        </video>
+        <div class="bg-white py-2 font-medium">Cycle of Time</div>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg border border-[#E5CFCF]">
+        <video controls class="w-full">
+          <source src="videos/waqt-ke-paar.mp4" type="video/mp4">
+        </video>
+        <div class="bg-white py-2 font-medium">Waqt Ke Paar</div>
+      </div>
     </div>
-  );
-}
+  </div>
+
+  <footer class="text-center text-sm text-gray-500 mt-16 mb-8">
+    Built with ❤️ by Swarnim Suhane
+  </footer>
+
+  <script>
+    const poems = [
+      "ek-paigam.jpeg",
+      "4-baatein.jpeg",
+      "ghar-ek-yaad.jpeg",
+      "koyal.jpeg",
+      "samandar.jpeg",
+      "zindagi-parindaa.jpeg",
+      "zindagi-safar.jpeg",
+      "ashq.jpeg",
+      "intezaar-ka-ant.jpeg",
+      "naya-saal.jpeg",
+      "noor-e-ishq.jpeg",
+      "phir-ek-maut.jpeg",
+      "shaant-safar.jpeg",
+      "tasavvur-ki-tanhai.jpeg"
+    ];
+
+    const gallery = document.getElementById("poemGallery");
+
+    poems.forEach((img, i) => {
+      const card = document.createElement("div");
+      card.className = "w-full h-[500px] mb-6 rounded-xl shadow-xl overflow-hidden border-4 border-[#E5CFCF] bg-cover bg-center relative";
+      card.style.backgroundImage = `url(images/${img})`;
+
+      let heart = document.createElement("div");
+      heart.innerHTML = "❤️";
+      heart.className = "absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-red-500 opacity-0";
+
+      card.appendChild(heart);
+
+      card.ondblclick = () => {
+        heart.classList.add("like-heart");
+        heart.classList.remove("opacity-0");
+        setTimeout(() => heart.classList.add("opacity-0"), 600);
+      };
+
+      gallery.appendChild(card);
+    });
+  </script>
+</body>
+</html>
